@@ -1,0 +1,40 @@
+<div class="container h-100  align-items-center">
+        <div class="col card-res" style="padding-bottom: 2vh;">
+                <mat-card class="mat-elevation-z8">
+                    <mat-tab-group mat-stretch-tabs>
+                        <mat-tab label="คนไทย">
+                            <div class="row" style="padding-top: 1vh;">
+    
+                                <div class="col">
+                                    <h2>สถิติคนไทยเข้า - ออก (2551-2562)</h2>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <canvas baseChart height="150" [datasets]="lineChartDataTH" [labels]="lineChartLabelsTH"
+                                        [options]="lineChartOptionsTH"
+                                        [chartType]="lineChartTypeTH" ></canvas>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="คนต่างชาติ">
+                            <div class="row" style="padding-top: 1vh;">
+    
+                                <div class="col">
+                                    <h2>สถิติคนต่างชาติเข้า - ออก (2551-2562)</h2>
+                                </div>
+    
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <canvas baseChart height="150" [datasets]="lineChartDataNA" [labels]="lineChartLabelsNA"
+                                        [options]="lineChartOptionsTH" 
+                                        [chartType]="lineChartTypeTH" ></canvas>
+                                </div>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-card>
+            </div>
+</div>

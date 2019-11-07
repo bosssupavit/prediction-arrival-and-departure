@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+
+
+@include mat-core();
+$custom-typography: mat-typography-config(
+  $font-family: "Prompt"
+);
+@include angular-material-typography($custom-typography);
+
+html, body { height: 100%; background: #0040C1; overflow: hidden;}
+body { margin: 0; font-family: Prompt, "Helvetica Neue", sans-serif; }
+
+.hero {
+  background-color: #FFA800;
+  position: top;
+  height: 99vh;
+  //overflow: hidden;
+}
+
+
+

@@ -1,0 +1,24 @@
+.example-card {
+    max-width: 450px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://scontent.fbkk14-1.fna.fbcdn.net/v/t1.0-9/72846166_2495552740540844_7724629480790032384_o.jpg?_nc_cat=104&_nc_oc=AQl2w-iYhp7wGakhIQapwDxWTRk3LeQwEBIuZTDg957cI2t4mk9fVOrnRuWGa5FaHy0&_nc_ht=scontent.fbkk14-1.fna&oh=4883cddece4fca07941f4b45c149bd97&oe=5E55B788');
+    background-size: cover;
+  }
+
+  .example-header-image2 {
+    background-image: url('https://scontent.fbkk10-1.fna.fbcdn.net/v/t31.0-8/21014186_1555163837860890_5466599848173714970_o.jpg?_nc_cat=102&_nc_oc=AQlCNn2rM62WpUcsw0Ciw0TWl2zLCzJzu2pI6mwRsQbNfco-t13lQxkfBvmwgOt2zRM&_nc_ht=scontent.fbkk10-1.fna&oh=7c02ddb850a35e1892e5effe113ed944&oe=5E55EDE1');
+    background-size: cover;
+  }
+
+  .example-header-image3 {
+    background-image: url('https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.0-9/22549579_1889509521367319_6243332976211250188_n.jpg?_nc_cat=103&_nc_oc=AQl_eLS4sV0ca1UPmia8BQ5z78rx7RMt_EomRDIgE9HwOUck6-_XXdb0BEIIwsq9RJg&_nc_ht=scontent.fbkk10-1.fna&oh=035b9ea5dc518bdb614b0ac3638f4623&oe=5E4C8BC1');
+    background-size: cover;
+  }
+
+  .card-res {
+    @media only screen and (max-width: 750px) {
+        padding-top: 1vh;
+    }
+}

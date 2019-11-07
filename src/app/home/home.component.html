@@ -1,0 +1,167 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>การคาดการณ์เข้า - ออกประเทศไทย</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-lg-6 col-xl-6 card-res">
+            <mat-card class="mat-elevation-z8">
+                <div class="row">
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>คนไทย</h2>
+                            </div>
+                            <div class="col-6">
+                                <mat-form-field class="float-right">
+                                    <mat-label>เดือน</mat-label>
+                                    <mat-select [(ngModel)]="selectMonthTH" name="monthTH"
+                                        (selectionChange)="changeMonthTH($event.value)">
+                                        <mat-option *ngFor="let month of monthsTH" [value]="month.value">
+                                            {{month.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="row" style="padding-top: 1vh;">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>เข้า</p>
+                                    </div>
+                                    <div class="col">
+                                        <h1>{{th_in || 0}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>ออก</p>
+                                    </div>
+                                    <div class="col">
+                                        <h1>{{th_out || 0}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+
+        </div>
+        <div class="col-sm-12  col-lg-6 col-xl-6 card-res">
+            <mat-card class="mat-elevation-z8">
+                <div class="row">
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>คนต่างชาติ</h2>
+                            </div>
+                            <div class="col-6">
+                                <mat-form-field class="float-right">
+                                    <mat-label>เดือน</mat-label>
+                                    <mat-select [(ngModel)]="selectMonthNA" name="monthNA"
+                                        (selectionChange)="changeMonthNA($event.value)">
+                                        <mat-option *ngFor="let month of monthsNA" [value]="month.value">
+                                            {{month.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="row" style="padding-top: 1vh;">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>เข้า</p>
+                                    </div>
+                                    <div class="col">
+                                        <h1>{{na_in || 0}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>ออก</p>
+                                    </div>
+                                    <div class="col">
+                                        <h1>{{na_out || 0}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+
+        </div>
+        <div class="col card-res" style="padding-bottom: 2vh;">
+            <mat-card class="mat-elevation-z8">
+                <mat-tab-group mat-stretch-tabs>
+                    <mat-tab label="คนไทย">
+                        <div class="row" style="padding-top: 1vh;">
+
+                            <div class="col-6">
+                                <h2>กราฟเปรียบเทียบคนไทยเข้า - ออก</h2>
+                            </div>
+
+                            <div class="col-6">
+                                <mat-form-field class="float-right">
+                                    <mat-label>เดือน</mat-label>
+                                    <mat-select [(ngModel)]="selectYearTH" name="yearTH"
+                                        (selectionChange)="changeYearTH($event.value)">
+                                        <mat-option *ngFor="let year of years" [value]="year.value">
+                                            {{year.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <canvas baseChart height="110" [datasets]="lineChartDataTH" [labels]="lineChartLabelsTH"
+                                    [options]="lineChartOptionsTH"
+                                    [chartType]="lineChartTypeTH" ></canvas>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="คนต่างชาติ">
+                        <div class="row" style="padding-top: 1vh;">
+
+                            <div class="col-6">
+                                <h2>กราฟเปรียบเทียบคนต่างชาติเข้า - ออก</h2>
+                            </div>
+
+                            <div class="col-6">
+                                <mat-form-field class="float-right">
+                                    <mat-label>เดือน</mat-label>
+                                    <mat-select [(ngModel)]="selectYearNA" name="yearNA"
+                                        (selectionChange)="changeYearNA($event.value)">
+                                        <mat-option *ngFor="let year of years" [value]="year.value">
+                                            {{year.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <canvas baseChart height="110" [datasets]="lineChartDataNA" [labels]="lineChartLabelsNA"
+                                    [options]="lineChartOptionsTH" 
+                                    [chartType]="lineChartTypeTH" ></canvas>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card>
+        </div>
+    </div>
+</div>
